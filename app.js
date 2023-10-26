@@ -1,6 +1,5 @@
 const express = require("express")
 const app = express()
-const cors = require('cors');
 const PORT = process.env.PORT || 5000
 require("dotenv").config();
 const ConnectToDatabase = require("./db/connect")
@@ -11,7 +10,6 @@ app.get("/", (req, res) =>
     res.send("Hi I am Rushikesh Biradar")
 })
 
-app.use(cors());
 app.use("/api/courses", Course_Router);
 
 const start =async () =>
