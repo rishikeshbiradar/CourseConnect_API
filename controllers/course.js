@@ -1,9 +1,11 @@
 const Course = require("../models/course")
 
 const getAllCourses = async (req, res) => {
-    const { title, description, duration, level, platform, images, urls, reviews_count, ratings, paid, students_count, type, skills, prerequisites, domain, organization, course_certification_type, summary, instructor, lecture_count, sort, select } = req.query;
+    const {ID, title, description, duration, level, platform, images, urls, reviews_count, ratings, paid, students_count, type, skills, prerequisites, domain, organization, course_certification_type, summary, instructor, lecture_count, sort, select } = req.query;
     const queryObject = {};
-
+    if (ID) {
+        queryObject.ID = ID
+    }
     if (title) {
         queryObject.title = title
     }
